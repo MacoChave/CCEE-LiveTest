@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="container__title">Inicio de sesión</h2>
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      placeholder="Usuario"
+      name="input-user"
+      id="input-user"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Curso</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let course of courses" [value]="course.NOMBRE">
+        {{ course.NOMBRE }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-flat-button color="accent">Iniciar Sesión</button>
+</div>

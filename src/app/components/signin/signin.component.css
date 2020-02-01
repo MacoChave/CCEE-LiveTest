@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 70%;
+}
+
+.container__title {
+  margin: 6rem auto 2rem auto;
+}
