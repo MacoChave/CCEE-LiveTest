@@ -1,0 +1,27 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+/*  MAIN THEME */
+$LiveTest-primary: mat-palette($mat-deep-orange, 500);
+$LiveTest-accent: mat-palette($mat-light-blue, 500);
+$LiveTest-warn: mat-palette($mat-red);
+
+/* LIGHT THEME */
+/*
+*/
+$LiveTest-theme: mat-light-theme(
+  $LiveTest-primary,
+  $LiveTest-accent,
+  $LiveTest-warn
+);
+
+/* DARK THEME */
+/*
+$LiveTest-theme: mat-dark-theme(
+  $LiveTest-primary,
+  $LiveTest-accent,
+  $LiveTest-warn
+  );
+  */
+/* MAIN THEME DEFINITION */
+@include angular-material-theme($LiveTest-theme);
