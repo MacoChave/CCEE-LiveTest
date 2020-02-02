@@ -3,6 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { SigninComponent } from "./components/signin/signin.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { UserComponent } from "./components/user/user.component";
+import { CourseComponent } from "./components/modulo/course/course.component";
+import { QuestionComponent } from "./components/modulo/question/question.component";
 
 const routes: Routes = [
   {
@@ -16,11 +18,25 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      {
+        path: "course",
+        component: CourseComponent,
+        outlet: "admin"
+      }
+    ]
   },
   {
     path: "user",
-    component: UserComponent
+    component: UserComponent,
+    children: [
+      {
+        path: "question",
+        component: QuestionComponent,
+        outlet: "user"
+      }
+    ]
   }
 ];
 

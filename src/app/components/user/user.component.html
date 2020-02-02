@@ -2,8 +2,14 @@
   <mat-icon class="icon">more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="[{ outlets: { user: ['question'] } }]">
+    <span>Preguntas</span>
+  </button>
   <button mat-menu-item (click)="signout()">
     <span>Cerrar sesión</span>
   </button>
 </mat-menu>
+
 <h2 class="title">{{ user.ID }}</h2>
+
+<router-outlet name="user"></router-outlet>

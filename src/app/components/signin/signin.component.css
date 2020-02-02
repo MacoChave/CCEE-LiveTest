@@ -5,6 +5,11 @@
   width: 70%;
 }
 
-.container__title {
+.sign__title {
   margin: 6rem auto 2rem auto;
+}
+
+.sign__form {
+  margin: auto;
+  text-align: center;
 }

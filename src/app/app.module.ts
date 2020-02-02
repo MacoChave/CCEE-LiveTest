@@ -11,9 +11,11 @@ import { MaterialModule } from "./material/material.module";
 import { SigninComponent } from "./components/signin/signin.component";
 import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
+import { CourseComponent } from './components/modulo/course/course.component';
+import { QuestionComponent } from './components/modulo/question/question.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, AdminComponent, UserComponent],
+  declarations: [AppComponent, SigninComponent, AdminComponent, UserComponent, CourseComponent, QuestionComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

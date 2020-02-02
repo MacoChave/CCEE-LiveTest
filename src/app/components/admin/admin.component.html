@@ -2,6 +2,9 @@
   <mat-icon class="icon">more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="[{ outlets: { admin: ['course'] } }]">
+    <span>Cursos</span>
+  </button>
   <button mat-menu-item (click)="signout()">
     <span>Cerrar sesión</span>
   </button>
@@ -10,3 +13,5 @@
 <button mat-fab color="accent" class="fab" (click)="newCourse()">
   <mat-icon>add</mat-icon>
 </button>
+
+<router-outlet name="admin"></router-outlet>
