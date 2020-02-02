@@ -1,0 +1,11 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" class="icon__container">
+  <mat-icon class="icon">more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="signout()">
+    <span>Cerrar sesión</span>
+  </button>
+</mat-menu>
+<button mat-fab color="accent" class="fab" (click)="newCourse()">
+  <mat-icon>add</mat-icon>
+</button>

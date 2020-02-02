@@ -9,9 +9,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { MaterialModule } from "./material/material.module";
 import { SigninComponent } from "./components/signin/signin.component";
+import { AdminComponent } from './components/admin/admin.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent],
+  declarations: [AppComponent, SigninComponent, AdminComponent, UserComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Course } from "src/app/models/course";
+import { User } from "src/app/models/user";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-signin",
@@ -17,7 +19,22 @@ export class SigninComponent implements OnInit {
       NOMBRE: "Curso 2"
     }
   ];
-  constructor() {}
+  user: User = {
+    ID: "",
+    COURSE: ""
+  };
+
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  signin() {
+    if (this.user.ID === "admin") {
+      localStorage.setItem("session", JSON.stringify(this.user));
+      this.router.navigate(["admin"]);
+    } else {
+      localStorage.setItem("session", JSON.stringify(this.user));
+      this.router.navigate(["user"]);
+    }
+  }
 }
