@@ -1,1 +1,31 @@
-<p>question works!</p>
+<div class="container">
+  <mat-card *ngFor="let question of questions">
+    <mat-card-header>
+      <mat-card-title>{{ question.COURSE }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{ question.SENTENCE }}
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="accent" (click)="viewQuestion(question)">
+        Ver
+      </button>
+      <button
+        *ngIf="!question.CORRECT"
+        mat-button
+        color="accent"
+        (click)="answerQuestion(question)"
+      >
+        Responder
+      </button>
+      <button
+        *ngIf="user.ID == 'admin'"
+        mat-button
+        color="accent"
+        (click)="answerQuestion(question)"
+      >
+        Editar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

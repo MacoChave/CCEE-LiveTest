@@ -1,1 +1,12 @@
-<p>course works!</p>
+<div class="container">
+  <mat-card *ngFor="let course of courses">
+    <mat-card-header>
+      <mat-card-title>{{ course.NOMBRE }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button mat-button color="accent" (click)="viewCourse(course)">
+        Ver preguntas
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
