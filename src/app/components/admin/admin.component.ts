@@ -10,12 +10,13 @@ import { User } from "src/app/models/user";
 export class AdminComponent implements OnInit {
   user: User;
 
-  constructor(private router: Router) {}
-
-  ngOnInit() {
+  constructor(private router: Router) {
     this.user = JSON.parse(localStorage.getItem("session"));
-    if (this.user.ID !== "admin") this.router.navigate(["signin"]);
+    if (this.user === null) this.router.navigate(["signin"]);
+    else if (this.user.ID !== "admin") this.router.navigate(["user"]);
   }
+
+  ngOnInit() {}
 
   signout() {
     localStorage.removeItem("session");
