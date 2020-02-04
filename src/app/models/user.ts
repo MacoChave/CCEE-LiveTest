@@ -1,4 +1,5 @@
 export interface User {
-  ID?: string;
+  id?: string;
+  IDENTIFICACION?: string;
   COURSE?: string;
 }

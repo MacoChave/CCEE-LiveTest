@@ -9,17 +9,19 @@
         name="input-user"
         id="input-user"
         required
-        [(ngModel)]="user.ID"
+        [(ngModel)]="user.IDENTIFICACION"
       />
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Curso</mat-label>
-      <mat-select [(value)]="user.COURSE">
-        <mat-option *ngFor="let course of courses" [value]="course.NOMBRE">
+      <mat-select [(value)]="user.COURSE" name="course">
+        <mat-option *ngFor="let course of courses" [value]="course.id">
           {{ course.NOMBRE }}
         </mat-option>
       </mat-select>
     </mat-form-field>
+
     <button mat-flat-button color="accent">
       Iniciar Sesión
     </button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Course } from "src/app/models/course";
+import { CourseService } from "src/app/services/course.service";
 
 @Component({
   selector: "app-course",
@@ -7,36 +8,19 @@ import { Course } from "src/app/models/course";
   styleUrls: ["./course.component.css"]
 })
 export class CourseComponent implements OnInit {
-  courses: Course[] = [
-    {
-      CODIGO: "asdfhh",
-      NOMBRE: "Curso 1"
-    },
-    {
-      CODIGO: "qwerty",
-      NOMBRE: "Curso 2"
-    },
-    {
-      CODIGO: "zxcvbn",
-      NOMBRE: "Curso 3"
-    },
-    {
-      CODIGO: "poiuyt",
-      NOMBRE: "Curso 4"
-    },
-    {
-      CODIGO: "ñlkjhg",
-      NOMBRE: "Curso 5"
-    },
-    {
-      CODIGO: "mnbvcx",
-      NOMBRE: "Curso 6"
-    }
-  ];
+  courses: Course[];
 
-  constructor() {}
+  constructor(private courseService: CourseService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.courseService.getAllCourse().subscribe(res => (this.courses = res));
+  }
 
   viewCourse(course: Course) {}
+
+  editCourse(course: Course) {}
+
+  deleteCourse(course: Course) {
+    this.courseService.deleteCourse(course.id);
+  }
 }

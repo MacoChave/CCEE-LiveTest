@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Course } from "src/app/models/course";
 import { User } from "src/app/models/user";
 import { Router } from "@angular/router";
+import { CourseService } from "src/app/services/course.service";
 
 @Component({
   selector: "app-signin",
@@ -9,27 +10,22 @@ import { Router } from "@angular/router";
   styleUrls: ["./signin.component.css"]
 })
 export class SigninComponent implements OnInit {
-  courses: Course[] = [
-    {
-      CODIGO: 0,
-      NOMBRE: "Curso 1"
-    },
-    {
-      CODIGO: 1,
-      NOMBRE: "Curso 2"
-    }
-  ];
   user: User = {
-    ID: "",
+    id: "",
+    IDENTIFICACION: "",
     COURSE: ""
   };
+  courses: Course[];
+  selected = "nothing";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private courseService: CourseService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.courseService.getAllCourse().subscribe(res => (this.courses = res));
+  }
 
   signin() {
-    if (this.user.ID === "admin") {
+    if (this.user.IDENTIFICACION === "admin") {
       localStorage.setItem("session", JSON.stringify(this.user));
       this.router.navigate(["admin"]);
     } else {

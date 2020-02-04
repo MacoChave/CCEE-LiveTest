@@ -13,7 +13,8 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router) {
     this.user = JSON.parse(localStorage.getItem("session"));
     if (this.user === null) this.router.navigate(["signin"]);
-    else if (this.user.ID !== "admin") this.router.navigate(["user"]);
+    else if (this.user.IDENTIFICACION !== "admin")
+      this.router.navigate(["user"]);
   }
 
   ngOnInit() {}

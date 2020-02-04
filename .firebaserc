@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ccee-test": {
+      "hosting": {
+        "LiveTest": [
+          "ccee-test"
+        ]
+      }
+    }
+  }
+}
