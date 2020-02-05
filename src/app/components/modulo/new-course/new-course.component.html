@@ -1,0 +1,11 @@
+<form class="form" (ngSubmit)="sendCourse()">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Curso"
+      name="course"
+      [(ngModel)]="course.NOMBRE"
+    />
+  </mat-form-field>
+  <button mat-button color="primary">Aceptar</button>
+</form>

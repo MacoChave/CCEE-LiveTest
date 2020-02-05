@@ -12,15 +12,16 @@ import { QuestionService } from "src/app/services/question.service";
 export class UserComponent implements OnInit {
   user: User;
 
-  constructor(private router: Router, questionService: QuestionService) {
+  constructor(private router: Router, questionService: QuestionService) {}
+
+  ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("session"));
     if (this.user === null) this.router.navigate(["signin"]);
   }
 
-  ngOnInit() {}
-
   signout() {
     localStorage.removeItem("session");
+    localStorage.removeItem("course");
     this.router.navigate(["signin"]);
   }
 }

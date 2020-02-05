@@ -1,0 +1,12 @@
+<form class="form" (ngSubmit)="sendQuestion()">
+  <mat-form-field>
+    <textarea
+      matInput
+      class="form__input"
+      name="sentence"
+      [(ngModel)]="question.SENTENCE"
+      placeholder="Pregunta"
+    ></textarea>
+  </mat-form-field>
+  <button mat-button color="primary">Aceptar</button>
+</form>

@@ -36,11 +36,11 @@ export class CourseService {
   }
 
   addCourse(course: Course) {
-    this.afs.collection("course").add(this.courses);
+    this.afs.collection<Course>("course").add(course);
   }
 
-  updateCourse(id: string, course: Course) {
-    this.afs.doc(`course/${id}`).update(course);
+  updateCourse(course: Course) {
+    this.afs.doc(`course/${course.id}`).update(course);
   }
 
   deleteCourse(id: string) {

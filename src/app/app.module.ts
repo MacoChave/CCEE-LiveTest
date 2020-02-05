@@ -17,6 +17,8 @@ import { UserComponent } from "./components/user/user.component";
 import { CourseComponent } from "./components/modulo/course/course.component";
 import { QuestionComponent } from "./components/modulo/question/question.component";
 import { environment } from "src/environments/environment";
+import { NewCourseComponent } from "./components/modulo/new-course/new-course.component";
+import { NewQuestionComponent } from "./components/modulo/new-question/new-question.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { environment } from "src/environments/environment";
     AdminComponent,
     UserComponent,
     CourseComponent,
-    QuestionComponent
+    QuestionComponent,
+    NewCourseComponent,
+    NewQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { environment } from "src/environments/environment";
     AngularFireModule.initializeApp(environment.firebaseConfig, "ccee-test")
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewCourseComponent, NewQuestionComponent]
 })
 export class AppModule {}

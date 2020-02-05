@@ -35,12 +35,12 @@ export class QuestionService {
       );
   }
 
-  addQuestion(course: string, question: Question) {
-    this.afs.collection("question").add(question);
+  addQuestion(question: Question) {
+    this.afs.collection<Question>("question").add(question);
   }
 
-  updateQuestion(id: string, question: Question) {
-    this.afs.doc(`question/${id}`).update(question);
+  updateQuestion(question: Question) {
+    this.afs.doc(`question/${question.id}`).update(question);
   }
 
   deleteQuestion(id: string) {
