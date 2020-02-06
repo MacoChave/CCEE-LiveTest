@@ -1,0 +1,44 @@
+<button mat-icon-button class="icon__container" (click)="goBack()">
+  <mat-icon class="icon">arrow_back_io</mat-icon>
+</button>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ question.SENTENCE }}</mat-card-title>
+    <mat-card-subtitle>{{ question.AUTHOR }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      *ngIf="question.ANSWER === '' || !question.CORRECT; else viewQuestion"
+      class="form"
+      (ngSubmit)="updateQuestion()"
+    >
+      <mat-form-field>
+        <textarea
+          matInput
+          class="form__input"
+          name="sentence"
+          [(ngModel)]="question.ANSWER"
+          placeholder="Respuesta"
+          rows="10"
+        ></textarea>
+      </mat-form-field>
+      <button mat-button class="form__button" color="primary">
+        Enviar respuesta
+      </button>
+    </form>
+    <ng-template #viewQuestion>
+      <p>{{ question.ANSWER }}</p>
+    </ng-template>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <mat-slide-toggle
+      *ngIf="user.IDENTIFICACION === 'admin'"
+      [(ngModel)]="question.CORRECT"
+      (change)="onChange($event)"
+      color="accent"
+    >
+      Correcto
+    </mat-slide-toggle>
+  </mat-card-actions>
+</mat-card>

@@ -9,7 +9,8 @@ import {
   MatSelectModule,
   MatMenuModule,
   MatCardModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSlideToggleModule
 } from "@angular/material";
 
 const material = [
@@ -21,7 +22,8 @@ const material = [
   MatSelectModule,
   MatMenuModule,
   MatCardModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSlideToggleModule
 ];
 
 @NgModule({

@@ -10,16 +10,12 @@
       {{ question.SENTENCE }}
     </mat-card-content>
     <mat-card-actions align="end">
-      <button mat-button color="accent" (click)="viewQuestion(question)">
-        Ver
-      </button>
       <button
-        *ngIf="!question.CORRECT"
         mat-button
         color="accent"
-        (click)="answerQuestion(question)"
+        [routerLink]="['/question/', question.id]"
       >
-        Responder
+        Ver
       </button>
       <button
         *ngIf="user.IDENTIFICACION == 'admin'"

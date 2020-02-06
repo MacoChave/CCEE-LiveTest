@@ -15,8 +15,8 @@ export class SigninComponent implements OnInit {
     IDENTIFICACION: "",
     COURSE: ""
   };
+  course: Course;
   courses: Course[];
-  selected = "nothing";
 
   constructor(private router: Router, private courseService: CourseService) {}
 
@@ -30,6 +30,7 @@ export class SigninComponent implements OnInit {
       this.router.navigate(["admin"]);
     } else {
       localStorage.setItem("session", JSON.stringify(this.user));
+      localStorage.setItem("course", JSON.stringify({ id: this.user.COURSE }));
       this.router.navigate(["user"]);
     }
   }

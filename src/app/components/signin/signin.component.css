@@ -9,7 +9,7 @@
   margin: 6rem auto 2rem auto;
 }
 
-.sign__form {
-  margin: auto;
-  text-align: center;
+.form {
+  display: flex;
+  flex-direction: column;
 }

@@ -19,6 +19,7 @@ import { QuestionComponent } from "./components/modulo/question/question.compone
 import { environment } from "src/environments/environment";
 import { NewCourseComponent } from "./components/modulo/new-course/new-course.component";
 import { NewQuestionComponent } from "./components/modulo/new-question/new-question.component";
+import { ViewQuestionComponent } from './components/view-question/view-question.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NewQuestionComponent } from "./components/modulo/new-question/new-quest
     CourseComponent,
     QuestionComponent,
     NewCourseComponent,
-    NewQuestionComponent
+    NewQuestionComponent,
+    ViewQuestionComponent
   ],
   imports: [
     BrowserModule,

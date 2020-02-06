@@ -22,13 +22,13 @@ export class QuestionComponent implements OnInit {
   ) {
     this.user = JSON.parse(localStorage.getItem("session"));
     this.course = JSON.parse(localStorage.getItem("course"));
-  }
-
-  ngOnInit() {
+    console.log("COURSE", this.course);
     this.questionService.getAllQuestion(this.course.id).subscribe(res => {
       this.questions = res;
     });
   }
+
+  ngOnInit() {}
 
   /* SOLO PARA ADMIN */
   newQuestion() {

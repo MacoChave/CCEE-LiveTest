@@ -4,4 +4,5 @@ export interface Question {
   CORRECT?: boolean;
   COURSE?: string;
   SENTENCE?: string;
+  ANSWER?: string;
 }

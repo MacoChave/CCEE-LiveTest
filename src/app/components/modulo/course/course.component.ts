@@ -20,7 +20,10 @@ export class CourseComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.courseService.getAllCourse().subscribe(res => (this.courses = res));
+    this.courseService.getAllCourse().subscribe(res => {
+      this.courses = res;
+      console.log("COURSE", this.courses);
+    });
   }
 
   viewCourse(course: Course) {
